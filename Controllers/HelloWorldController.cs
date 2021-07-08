@@ -15,9 +15,12 @@ namespace personal_agenda_management
             return View();
         }
         //GET: /HelloWorld/Welcome
-        public string Welcome()
+        public IActionResult Welcome(string name,int number = 8)
+
         {
-            return "This id for welcome you";
+            ViewData["Message"] = "Hello" + name;
+            ViewData["Message"]=number;
+            return View();
         }
 
 
