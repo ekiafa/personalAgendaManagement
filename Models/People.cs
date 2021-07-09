@@ -13,7 +13,7 @@ namespace personal_agenda_management.Models
 
         public string name { get; set; }
 
-        public string phoneNumber { get; set; }
+        public int phoneNumber { get; set; }
 
 
     }
