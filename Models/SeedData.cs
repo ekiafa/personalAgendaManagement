@@ -24,7 +24,7 @@ namespace personal_agenda_management.Models
                     new People
                     {
                         name = "Maria ",
-                        phoneNumber = 746234567
+                        phoneNumber = "746234567",
                     }) ;
                 context.SaveChanges();
 
