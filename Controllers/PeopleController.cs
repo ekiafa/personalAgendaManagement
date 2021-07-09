@@ -20,9 +20,14 @@ namespace personal_agenda_management.Controllers
         }
 
         // GET: People
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.People.ToListAsync());
+            var people = from p in _context.People select p;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                people = people.Where(p => p.name.Contains(searchString));
+            }
+            return View(await people.ToListAsync());
         }
 
         // GET: People/Details/5
